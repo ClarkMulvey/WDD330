@@ -13,6 +13,55 @@
     </header>
     <main>
         <h1>Week 2 Notes/Code Examples</h1>
+        <section>
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" id="name" for="name">
+            </div>
+            <div>
+                <button>Save</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                <span id="result"></span>
+            </div>
+        </section>
+        <section>
+            <div>
+                <p>I had no idea you could set a gloabl variable by not using the let or const keywords before declaring the variable. This seems like more a bug, and not an efficient way of declaring a global variable.</p>
+                <p>You can concatenate two strings by either using the string.concat("string") method, or by simple adding them together - string + string.</p>
+                <p>the string.trim() method will remove any whitespace from the beginning and end of a string.</p>
+                <p>The string.repeat(x) will repeat the string x number of times - this is sort of like in Python if you multiply a string by some integer.</p>
+                <p>Template Literals:<br>
+                Template Literals allow both types of quote marks within the string, and they also allow the interpolation of JavaScript code: The JavaScript expression needs to in the format ${ JS Statement here } The result is returned in the string output.</p>
+                <div id="templateLiteral"></div>
+                <p>Template literal spacing appears to work in JS, but does not translate to innerHTML. Check the console log for JS view of the same statement as above.</p>
+                <p>This is what the reading says, "Template literals can be thought of as super-powered strings as they behave in the same way as normal string literals, but with the extra power of string interpolation. For this reason, it is not uncommon to see backticks used to create <em>all</em> strings in ES6 code"</p>
+
+                <div>Numbers</div>
+                <p>The toFixed() method on a number rounds a number ot a fixed number of decimal places. For example: <br> const PI = 3.1415926 <br> PI.toFixed(); - 3.142</p>
+                <p>Note that with toFixed - the number is returned as a string, not a number. The toPrecision() method rounds a number to a fixed number of significant figures that is once again returned as a string(and often using expontential notation);</p>
+                <p>There is a value Infinity that is a special error value in JavaScript that is used to represent any number that is too big for the language to deal with.</p>
+                <p>NaN is an error value that is short for "Not a Number" - it is used when an operation is attempted and the result isn't numerical.</p>
+                <p>The Number.isFinite() checks if the value is a number that can be used. This will return true if the value is a number that isn't Inifity, -Infinity, or NaN</p>
+                <p>Something I did not know - the easiest way to convert from a string to a number is with the method Number('23')</p>
+                <p>The easiest way to convert from a number to a string is similar: String(23) </p>
+                <p>The parseInt() method is super useful - it will truncate a string's number at its decimal, and it will also, if the string starts with a number, return the first part of the string only until the last digit before a non digit character parseFloat() will do something similar, but will also return decimal digits</p>
+                <p>Null acts like zero, but undefined does not. This means you can use null as a zero in mathematical operations, but not undefined.</p>
+                <div>Equality
+                </div>
+                <p>Soft Equality - == <br>
+                    Soft equality checks to see if the values match, but it will try and force the values to match each other - for example 5 == "5" will return true
+                </p>
+                <p>Hard Equality - === <br>
+                this will return true only if the values are of the same type, unless the value is NaN - then it breaks for some reason. To deal with this there's a Number.isNaN(NaN) method.</p>
+            </div>
+            <div>
+                Questions:
+            </div>
+            <div>I don't understand the point of a symbol datatype - what are they used for?</div>
+        </section>
     </main>
 
 
