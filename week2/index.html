@@ -12,7 +12,9 @@
         <ol id="list"></ol>
     </header>
     <main>
-        <h1>Week 2 Notes/Code Examples</h1>
+        <h2>Team Activity</h2>
+        <p>Click <a href="teamActivity/index.html">here</a> to see team activity</p>
+        <h2>Week 2 Notes/Code Examples</h2>
         <section>
             <div>
                 <label for="name">Name: </label>
@@ -29,6 +31,7 @@
         </section>
         <section>
             <div>
+                <h2>Javascript: Novice to Ninja, Chapter 2: Programming Basics</h2>
                 <p>I had no idea you could set a gloabl variable by not using the let or const keywords before declaring the variable. This seems like more a bug, and not an efficient way of declaring a global variable.</p>
                 <p>You can concatenate two strings by either using the string.concat("string") method, or by simple adding them together - string + string.</p>
                 <p>the string.trim() method will remove any whitespace from the beginning and end of a string.</p>
@@ -39,7 +42,7 @@
                 <p>Template literal spacing appears to work in JS, but does not translate to innerHTML. Check the console log for JS view of the same statement as above.</p>
                 <p>This is what the reading says, "Template literals can be thought of as super-powered strings as they behave in the same way as normal string literals, but with the extra power of string interpolation. For this reason, it is not uncommon to see backticks used to create <em>all</em> strings in ES6 code"</p>
 
-                <div>Numbers</div>
+                <h3>Numbers</h3>
                 <p>The toFixed() method on a number rounds a number ot a fixed number of decimal places. For example: <br> const PI = 3.1415926 <br> PI.toFixed(); - 3.142</p>
                 <p>Note that with toFixed - the number is returned as a string, not a number. The toPrecision() method rounds a number to a fixed number of significant figures that is once again returned as a string(and often using expontential notation);</p>
                 <p>There is a value Infinity that is a special error value in JavaScript that is used to represent any number that is too big for the language to deal with.</p>
@@ -49,8 +52,7 @@
                 <p>The easiest way to convert from a number to a string is similar: String(23) </p>
                 <p>The parseInt() method is super useful - it will truncate a string's number at its decimal, and it will also, if the string starts with a number, return the first part of the string only until the last digit before a non digit character parseFloat() will do something similar, but will also return decimal digits</p>
                 <p>Null acts like zero, but undefined does not. This means you can use null as a zero in mathematical operations, but not undefined.</p>
-                <div>Equality
-                </div>
+                <h3>Equality</h3>
                 <p>Soft Equality - == <br>
                     Soft equality checks to see if the values match, but it will try and force the values to match each other - for example 5 == "5" will return true
                 </p>
@@ -58,9 +60,126 @@
                 this will return true only if the values are of the same type, unless the value is NaN - then it breaks for some reason. To deal with this there's a Number.isNaN(NaN) method.</p>
             </div>
             <div>
-                Questions:
+                <h3>Javascript: Novice to Ninja, Chapter 3: Arrays, Logic, and Loops</h3>
+
+                <p>You can skip indexes in the array by using the square brackets assignment operator. So for example if we have the following statements:</p>
+                <p>const heroes = [];</p>
+                <p>heroes[1] = 'Superman';</p>
+                <p>heroes[4] = 'Batman';</p>
+
+                <p>This will work, and you will have items 0, 2, 3 all as undefined. Is this an issue? When would this ever be used? Should it be avoided?</p>
+
+                <p>delete heroes[1]; will delete the value from the array slot, but will not remove the item itself - meaning the size is the same and it's just replaced with an undefined value. What method deletes the spot in memory as well as the value?</p>
+
+                <p>Answer: we can use Splice to remove something</p>
+                <p>array.splice(2, 1); This will delete the second item, and only the second item from the array</p>
+                <p>array.splice(2, 2); will delete the item and the next item too</p>
+
+                <p>Descruturing can be used to declare mutiple variables at once, or, it can be used to swap variable names</p>
+                <p>ex:</p>
+                <p>let [x, y] = [1, 2];</p>
+                <p>then if we want to swap the values:</p>
+                <p>[x, y] = [y, x];</p>
+
+                <p>NOTE: They must be declared as let's, not const's - otherwise you cannot switch their values.</p>
+
+                <p>array.length is mutable it can be changed.</p>
+
+                <p>const heroesMarvel = ['Tony Stark=','Iron Man','Iron Slad','Iron Clad','Spiderman','Aunt May','Happy'];</p>
+                <p>if I used heroesMarvel.length = 15; There will be a bunch of undefined slots in the array</p> 
+                <p>if I used heroesMarvel.length = 3; There will only be the first three items in the array</p>
+
+                <p>array.pop() - removes and returns last item in array</p>
+                <p>array.shift() - removes and returns first item in array</p>
+                <p>array.push() - adds a new value to the end of an array</p>
+                <p>array.unshift() - adds a new value to the beginning of an array</p>
+
+
+                <p>array.concat([newArray]);</p>
+                <p>will return a new array containing both of the items in array, and newArray.</p>
+                <p>This doesn't update array, but it can if you set array = array.concat([newArray]);</p>
+                <p>but keep in mind that this doesnt work if array is const</p>
+
+                <p>New spread operator does the same thing </p>
+                <p>array = array[...array, newArray];</p>
+
+                <p>array.join(); joins the array together, can specify with which character by default it's commas and spaces</p>
+                <p>array.splice() can add, remove, or replace items in an array - it's destructive so be careful</p>
+
+                <p>array.reverse() reverses the order of the array permanently</p>
+
+                <p>If sets are so much quicker to iterate through, is it ever advantageous to have a set companion to an array?</p>
+                <p>So like lets say for some reason in a video game I have some kind of a creature that causes a debuff to a player if they are in the same room. Is it quicker to iterate through the array to check if one of those creatures exist, or is it faster to have a separate set construct that retains true if at least one of them is still alive?</p>
+
+                <h3>Sets:</h3>
+                <p>Main Methods:</p>
+                <p>.add()</p>
+                <p>.size()</p>
+                <p>.delete()</p>
+                <p>.has()</p>
+                <p>.clear()</p>
+
+                <p>Sets can be used to create a new array without duplicates:</p>
+                <p>const duplicate = [3, 1, 4, 1, 5, 9, 2, 6 ,5,3,5,9];</p>
+                <p><< [ 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9 ]</p>
+                <p>const nonDuplicate = [...new Set(duplicate)];</p>
+                <p><< [ 3, 1, 4, 5, 9, 2, 6 ]</p>
+
+                <p>WeakSets are used for garbage collection - and can only contain non-primitive data types</p>
+
+                <h3>Maps</h3>
+                <p>Can use any data type as the key</p>
+                <p>to add</p>
+                <p>.set(key, value);</p>
+                <p>to get the value</p>
+                <p>.get(key); -> returns the value</p>
+                <p>to check if a particular key is in a map:</p>
+                <p>.has(key); ->returns boolean</p>
+
+                <p>can create map with multiple values </p>
+                <p>let heroes = new Map([['Clark Kent', 'Superman'],['BruceWayne', 'Batman']]);</p>
+                <p>.size() returns number of pairs</p>
+                <p>.delete(key) ->returns boolean true if deleted, false if not found in map</p>
+                <p>.clear() removes all items </p>
+
+                <p>always include break statements in each switch statement, and a default switch statement</p>
+
+                <p>Each part of a for loop are optional</p>
+
+                <p>for example:</p>
+                <p>for (int i = 0; i < 5; i++) {}</p>
+                <p>could be written:</p>
+                <p>int i = 0;</p>
+                <p>for ( ; i < 10 ; ) {
+                    console.log(i);
+                    i++;
+                }</p>
+
+                <p>to loop over an array:</p>
+                <p>for (let i = 0, max = avengers.length; i < max; i++) {}</p>
+                <p>This is actually preferable to i < avengers.length because it will only
+                run this statement once, whereas the alternative will run it each loop </p>
+                <p>new way:</p>
+                <p>for (const value of avengers) {}</p>
+
+                <p>this method doesn't actually work, does it?</p>
+                <p>function mean(array,callback) {
+                    if (callback) {
+                        array.map( callback );
+                    } 
+                    const total = array.reduce((a, b) => a + b);
+                    return total/array.length;
+                }</p>
+                <p>the reason it doesnt work is because array.map() doesn't change the array, it returns a new array</p>
+
+                <p>Why does the quiz project at the end work? There are methods defined inside of the method, but they are called before they are actually ran?</p>
+
+                <p>In addition, is it normal to declare methods inside of other methods? Seems a little wonk to me</p>
+                <p>The justification is "they need to be placed inside the start() ftn as nested ftns, as this gives them access to any var defined inside the start() function's scope. But this seems like bad practice, shouldn't we just add a separate parameter?</p>
+                <p>Is there no such thing as pass by reference in JS?</p>
+
+                <p>"The first part of this code remaisn the same - we create a map of questions and answers and store it in the quiz variable" - but it's not a map, is it?</p>
             </div>
-            <div>I don't understand the point of a symbol datatype - what are they used for?</div>
         </section>
     </main>
 
