@@ -3,19 +3,19 @@ let ol = document.querySelector('ol');
 const links =  [
     {
         label: "Week 1",
-        url: "../week1/index.html"
+        url: "week1/index.html"
     },
     {
         label: "Week 2",
-        url: "../week2/index.html"
+        url: "week2/index.html"
     },
     {
         label: "Week 3",
-        url: "../week3/index.html"
+        url: "week3/index.html"
     },
     {
         label: "Week 4",
-        url: "../week3/index.html"
+        url: "week3/index.html"
     }
 ]
 
