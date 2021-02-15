@@ -1,25 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 3</title>
     <link rel="stylesheet" href="styles/week3.css">
 </head>
+
 <body>
     <header>
         <ol></ol>
     </header>
     <main>
+
+        <h2>Week 3 Notes/Code Examples</h2>
+        <h3>Links</h3>
+        <ol id="links"></ol>
+        <p><em>Please see the JS file "week3.js" and the console to see JS examples - especially from the coding
+                challenges</em></p>
+        <div id="notes">
+            <h3>Object Methods</h3>
+
+            <p>Shorthand way of writing an object method:</p>
+            <p>user = {
+                sayHi() {
+                alert('Hello');
+                }
+                };</p>
+            <p>is accessed with user.sayHi();</p>
+
+            <p>To access member vars in member methods, the this keyword is needed</p>
+            <p>user.sayHI = function() {
+                sayHi() {
+                alert("Hello, my name is " + this.name);
+                }
+                }</p>
+
+            <p>if you just reference "name", the variable is not accessed</p>
+            <p>member methods can be accessed via square bracket notation, for instance:
+                user['sayHi']() would call the method</p>
+
+            <p>Keep in mind, usually if there's "this" inside a function, it expects to be called in an object context
+            </p>
+
+            <p>I'm not sure I understand - ask Bro Thayne about this and arrow functions. Something about arrow
+                functions don't have their own this, but they take it from their parent? Not sure I understand.</p>
+
+            <p>Is it dangerous to use a method to create and set a member variable?</p>
+            <p>When is it a good idea to have a method create a variable, rather than creating it at
+                object declaration?</p>
+
+            <p>If we return this in our member methods we can chain our methods:</p>
+            <p>ex:</p>
+            <p>ladder = {
+                step : 0,
+                up() {
+                this.step++;
+                return this;
+                },
+                down() {
+                this.step--;
+                return this;
+                },
+                showStep : function() {
+                alert(this.step);
+                return this;
+                }
+                }</p>
+
+            <p>we can call ladder.up().up().down().showStep(); and it will call all those methods in a chain </p>
+
+            <h3>Chapter 5 - Objects</h3>
+            <p>All objects are mutalbe at any time when a program is running. This means that its properties and methods
+                can be changed or removed, and new properties and methods can be added to the object, even if it was
+                declared using const.</p>
+
+            <p>Q: How are properties removed?</p>
+            <p>Q: Are there such things as private member vars in JS object literals?</p>
+
+            <p>If creating an object with properties the same name as a variable, you can have a shorthand way of
+                creating the object</p>
+
+            <p>ex:</p>
+            <p>const name = 'Iron Man';</p>
+            <p>const realName = 'Tony Stark';</p>
+            <p>// long way</p>
+            <p>const ironMan = { name: name, realName: realName };</p>
+            <p>// short ES6 way</p>
+            <p>const ironMan = { name, realName };</p>
+
+            <p>can use the in operator to see if an object has a particular property</p>
+            <p>'city' in superman;</p>
+            <p>returns either true or false - note the key has to be in quotes if it isn't a number</p>
+            <p>.hasOwnProperty('propertynam'); returns a boolean ONLY if the property is a part of the object, and
+                NOT if it has the property, but it got it through inheritance</p>
+
+            <p>Object.keys(ObjName) returns an array of the keys?Object.values(ObjName) returns an array of the values
+            </p>
+            <p>Object.entries(ObjName) returns an array of arrays - key value pairs.</p>
+            <p>Can be accessed nice in a for loop though:for(const [key,value] of Object.entries(superman)) {
+                console.log(`${key}: ${value}`);
+                }</p>
+
+            <p>delete ObjName.MethodName</p>
+
+            <p>OBJECTS ARE ASSIGNED BY REFERENCE</p>
+            <p>So how do we copy an object into a new instance with the same values?</p>
+
+            <p>Note: even if an object is used as a parameter, and every property has a default value, at the very least
+                an empty object must be passed as an argument, otherwise the ftn will not work correctly.</p>
+
+            <p>ON JSON:</p>
+            <p>whole object is a single quote string</p>
+            <p>1. Property names must be double-quoted</p>
+            <p>2. Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</p>
+            <p>3. Functions are not permitted values</p>
+
+            <p>Rounding Errors are common when working with Math library</p>
+
+            <p>How important are RegExp? They seem extremely powerful, but I don't think a quick skim will give me much
+                help. Where are other resources I can learn about them/</p>
+
+
+            <h3>CH6: DOM</h3>
+
+            <p>Node lists aren't arrays - but they are array like objects</p>
+            <p>can use length property and [] notation to access</p>
+
+            <p>You can also use:</p>
+            <p>const imageArray = Array.from(document.images);</p>
+            <p>or </p>
+            <p>const imageArray = [...document.images];</p>
+            <p>to turn them into arrays</p>
+
+            <p>node.childNodes returns whitespace while</p>
+            <p>node.children does not</p>
+            <p>node.getAttribute(); can be used to access attributes</p>
+            <p>you can also use </p>
+            <p>node.setAttribute() to set some attributes</p>
+            <p>dot notation can be used too</p>
+            <p>node.id</p>
+            <p>node.className</p>
+            <p>node.classList</p>
+            <p>node.style</p>
+
+            <p>for example</p>
+            <p>wonderWoman.classList.add('warrior');</p>
+            <p>will add a warrior class to that object</p>
+            <p>
+                <li class="hero warrior" id="amazon">...</li> etc
+            </p>
+            <p>then wonderWoman.classList.remove('warrior');</p>
+            <p>will do the same, but remove it (class="hero")</p>
+
+            <p>There is only one reference to an element on each page, so if you call appendChild(existingElement);</p>
+            it will just rearrange the page, rather than create a new element</p>
+
+            <p>If you're wanting to replace a node with another node, it must be a node - for ex a text node - can't
+                just be a string</p>
+
+            <p>can update CSS on the fly</p>
+            <p>NOTE any style attribute names must be camel case instead of dashed</p>
+            <p>ex background-color is accessed by backgroundColor this is because no property names should have dashes
+            </p>
+
+            <p>node.style.border = "red 2px solid"</p>
+
+            <h3>Chapter 7</h3>
+            <p>I know we have an event object passed to the callback function</p>
+            <p>Is it normal or desirable to pass in your own arguments to the callback function? Or is the event object
+                usually the only one we have?</p>
+
+            <p>You can remove an event listener with</p>
+            <p>removeEventListener()</p>
+
+            <p>But remember, if you are wanting to remove the event listener you must use a function name, and not an
+                anonymous function, as the parameter for the event listener - this is because the remove needs to take
+                this same function as an argument.</p>
+
+            <p>Bubbling - start in and move out</p>
+            <p>Capturing - start out and move in</p>
+            <p>These have to do with propagation - and event listeners are by default bubbled</p>
+            <p>event.stopPropagation() will stop the propagation.</p>
+        </div>
+
         <section id="section1">
         </section>
-        <section id="section2">          
+        <section id="section2">
         </section>
     </main>
     <footer>
 
     </footer>
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/weeks.js"></script>
     <script src="scripts/week3.js"></script>
 </body>
+
 </html>

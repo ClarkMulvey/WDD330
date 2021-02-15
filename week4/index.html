@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/week4.css">
+</head>
+
+<body>
+    <header>
+        <ol></ol>
+    </header>
+    <main>
+        <h2>Week 4 Notes/Code Examples</h2>
+
+        <h3>Links</h3>
+        <ol id="links"></ol>
+        <p><em>Please see the JS file "week4.js", "Ch12.js", "student.js" and the console to see JS examples</em></p>
+
+        <h3>Ch 8 Forms</h3>
+        <p>What does this syntax do?</p>
+        <p>const [input, button] = form.elements;</p>
+
+        <p>form.submit()</p>
+        <p>also input type of submit</p>
+        <p><input type='submit' value='submit'></p>
+        <p>can use a button tag or input tag for the submit button</p>
+        <p>Don't have a closing input tag though, just closing tag for button</p>
+
+        <p>use placeholder attribute to have some grayed out text in the text box, describing what to do with it.</p>
+        <p>I don't get it, do we access parts of the form by Id or name?</p>
+
+        <p>Is the spread operator the only way to get the nodelist into an array?</p>
+
+        <h3>Class Example</h3>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>I-Number</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section>
+            <form>
+                <div>
+                    <label for="firstName">First Name: </label>
+                    <input type="text" name="firstName" id="firstName">
+                </div>
+                <div>
+                    <label for="lastName">Last Name: </label>
+                    <input type="text" name="lastName" id="lastName">
+                </div>
+                <div>
+                    <label for="iNumber">I Number: </label>
+                    <input type="text" name="iNumber" id="iNumber">
+                </div>
+                <div>
+                    <input type="submit" id="submit" value="Save">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+
+    <script src="../scripts/weeks.js"></script>
+    <script src="scripts/week4.js" type='module'></script>
+    <script src="scripts/Ch12.js" type='module'></script>
+</body>
+
+</html>

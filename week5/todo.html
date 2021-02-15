@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div><a href="index.html">Back ></a></div>
+        <h1>To-Do List</h1>
+        <section>
+            <div id="filterList">
+                <input type="button" value="All">
+
+                <input type="button" value="Complete">
+
+                <input type="button" value="Incomplete">
+            </div>
+            <ul id="toDoList">
+
+            </ul>
+            <div id="remainingToDos"></div>
+        </section>
+        <section>
+            <form>
+                <div id="addToDo">
+                    <input type="text" id="content" name="content" placeholder="Enter an item">
+                    <button id="save">+</button>
+                    
+                </div>
+                <div class="error" id="error">Item must not be blank</div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+    
+    <script src="scripts/todoMain.js" type="module"></script>
+</body>
+</html>

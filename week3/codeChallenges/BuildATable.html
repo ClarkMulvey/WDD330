@@ -1,0 +1,179 @@
+<!doctype html>
+
+<div><a href="../">Back ></a></div>
+
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+    const MOUNTAINS = [{
+            name: "Kilimanjaro",
+            height: 5895,
+            place: "Tanzania"
+        },
+        {
+            name: "Everest",
+            height: 8848,
+            place: "Nepal"
+        },
+        {
+            name: "Mount Fuji",
+            height: 3776,
+            place: "Japan"
+        },
+        {
+            name: "Vaalserberg",
+            height: 323,
+            place: "Netherlands"
+        },
+        {
+            name: "Denali",
+            height: 6168,
+            place: "United States"
+        },
+        {
+            name: "Popocatepetl",
+            height: 5465,
+            place: "Mexico"
+        },
+        {
+            name: "Mont Blanc",
+            height: 4808,
+            place: "Italy/France"
+        }
+    ];
+
+    function buildTable(data) {
+        // Create the table
+        const table = document.createElement('table');
+
+        // Create the head row
+        const fields = Object.keys(data[0]);
+        const headRow = document.createElement('tr');
+        fields.forEach( function (field) {
+            //create heading cell
+            const cell = document.createElement('th');
+            cell.textContent = field;
+            headRow.appendChild(cell);
+        });
+        table.appendChild(headRow);
+
+        //Create the body of the table
+        data.forEach(function (mountain){
+            // Create the row
+            const row = document.createElement('tr');
+
+            // populate the row
+            fields.forEach(function (field){
+                // create cell
+                const cell = document.createElement('td');
+                // fill cell
+                cell.textContent = mountain[field];
+                // if cell is number, align right
+                if (typeof(mountain[field]) === "number") {
+                    cell.style.alignContent = "right";
+                } 
+                // add to row
+                row.appendChild(cell);
+            });
+            // add to table
+            table.appendChild(row);
+        });
+
+        table.style.border = "2px solid black";
+        return table;
+    }
+
+    document.querySelector('#mountains').appendChild(buildTable(MOUNTAINS));
+    /*
+    // grab mountains Div
+    const mountainsDiv = document.querySelector('#mountains');
+
+    // create a table tag
+    const displayTable = document.createElement('table');
+
+    displayTable.innerHTML = `
+	<tr>
+		<th>name</th>
+		<th>height</th>
+		<th>place</th>
+    </tr>`;
+
+    mountainsDiv.appendChild(displayTable);
+    console.log(displayTable);
+
+    MOUNTAINS.forEach(mountain => {
+        const el = document.createElement('tr');
+
+        const nameEl = document.createElement('td');
+        nameEl.textContent = mountain.name;
+
+        const heightEl = document.createElement('td');
+        heightEl.textContent = mountain.height;
+        heightEl.style.textAlign = "right";
+
+        const placeEl = document.createElement('td');
+        placeEl.textContent = mountain.place;
+
+        displayTable.appendChild(el);
+    });
+
+    console.log(displayTable);
+    */
+    /*
+  // populate the table tag
+  const mountainInfo = MOUNTAINS.map(x => {
+    return `
+		<tr>
+			<td>${x.name}</td>
+			<td>${x.height}</td>
+			<td>${x.place}</td>
+		</tr>`;
+  }).join('');
+  
+  displayTable.innerHTML = `
+	<tr>
+		<th>name</th>
+		<th>height</th>
+		<th>place</th>
+	</tr>` + mountainInfo;
+  
+  mountainsDiv.appendChild(displayTable);
+  */
+
+
+  /*
+    function buildTable(data) {
+        let table = document.createElement("table");
+
+        let fields = Object.keys(data[0]);
+        let headRow = document.createElement("tr");
+        fields.forEach(function (field) {
+            let headCell = document.createElement("th");
+            headCell.appendChild(document.createTextNode(field));
+            headRow.appendChild(headCell);
+        });
+        table.appendChild(headRow);
+
+        data.forEach(function (object) {
+            let row = document.createElement("tr");
+            fields.forEach(function (field) {
+                let cell = document.createElement("td");
+                cell.appendChild(document.createTextNode(object[field]));
+                if (typeof object[field] == "number") {
+                    cell.style.textAlign = "right";
+                }
+                row.appendChild(cell);
+            });
+            table.appendChild(row);
+        });
+
+        return table;
+    }
+
+    document.querySelector("#mountains")
+        .appendChild(buildTable(MOUNTAINS));
+
+        */
+</script>

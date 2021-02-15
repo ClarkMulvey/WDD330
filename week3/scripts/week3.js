@@ -1,3 +1,109 @@
+let linksList = document.querySelector('#links');
+
+const linksListItems =  [
+    {
+        label: "Chapter 7",
+        url: "Ch7/events.html"
+    },
+    {
+        label: "Build a Table Challenge",
+        url: "codeChallenges/BuildATable.html"
+    },
+    {
+        label: "Elements by Tag Name Challenge",
+        url: "codeChallenges/ElementsByTagName.html"
+    },
+    {
+        label: "Team Activity",
+        url: "teamActivity/index.html"
+    }
+]
+
+linksListItems.forEach(
+    link => {
+        linksList.innerHTML += 
+        `<li><a href="${link.url}">${link.label}</a></li>`;
+    }
+);
+
+
+
+////#############READING NOTES####################
+// From THIS article
+function makeUser() {
+    return {
+        name: "John",
+        ref() {
+            return this;
+        }
+    }
+}   
+
+let user = makeUser();
+
+console.log(user.ref().name);
+//Note the following will never work:
+// console.log(user.this.name); if we just had a ref: this property instead of the method
+// This is because 'this' is assigned at compliation - and it needs to be called as an object method
+
+
+/*Is it dangerous to use a method to create and set a member variable?
+When is it a good idea to have a method create a variable, rather than creating it at 
+object declaration?*/
+calculator = {
+    read() {
+        this.valueOne = prompt("gimme a value");
+        this.valueTwo = prompt("gimme another value");
+    },
+    sum() {
+        return parseFloat(this.valueOne) + parseFloat(this.valueTwo);
+    },
+    mul() {
+        return parseFloat(this.valueOne) * parseFloat(this.valueTwo);
+    }
+}
+
+
+// if we return this, we can chain our methods
+let ladder = {
+    step : 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep : function() {
+        alert(this.step);
+        return this;
+    }
+}
+
+
+//==========CH5 Objects==========
+function greet({greeting,name,age}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+}
+
+function greet({greeting='Hello',name,age=18}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+}
+
+let pattern = /[a-zA-Z]+ing$/;
+
+pattern = new RegExp('[a-zA-Z]+ing');
+
+const language = 'JavaScript';
+pattern = new RegExp(language);
+
+
+
+
+//===========================================================================
+//==========================================================================
+
 //const firstName = 'Clark';
 //const lastName = 'Mulvey';
 
@@ -93,7 +199,7 @@ section.appendChild(div3);
 
 /* Hikes */
 
-
+/*
 //create an array of hikes
 const hikeList = [
 {
@@ -265,4 +371,4 @@ hikeList.forEach(
         section2.appendChild(article);
 
     }
-);
+);*/

@@ -1,0 +1,124 @@
+* {
+    font-family: sans-serif;
+}
+
+:root {
+    --lightGray : #435be2;
+    --lightBlue : #7ca1f1;
+}
+
+h1 {
+    text-align: center;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    display: inline-block;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+li {
+    padding: 6px 0 6px 0;
+    width: 100%;
+
+}
+
+/* Darker background-color on hover */
+li:hover {
+    background: rgb(146, 146, 146);
+}
+
+li:nth-child(even) {
+    background:var(--lightGray);
+}
+
+li:nth-child(odd) {
+    background:var(--lightBlue);
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.error {
+    background: #f99;
+    border: #900 1px solid;
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+}
+
+.checkbox-custom {
+    display: inline-block;
+    padding: 6px;
+    margin: 6px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+}
+
+#toDoList {
+    min-height: 250px;
+}
+
+#toDoList input[type="checkbox"] {
+    
+}
+
+#toDoList input[type="button"] {
+    float: right;
+    background-color: #ffffff00;
+    border: none;
+    color: white;
+    padding: 0;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#remainingToDos {
+    text-align: center;
+    padding: 8px;
+    background: rgb(101, 199, 178);
+    margin: 10px 0 10px 0;
+}
+
+#filterList {
+    text-align: center;
+    padding: 16px;
+    background: rgb(101, 199, 178);
+    margin: 10px 0 10px 0;
+}
+#filterList input[type="button"]{
+    background-color: #ffffff00;
+    border: none;
+    font-size: 16px;
+}
+
+#addToDo {
+    text-align: center;
+    padding: 16px;
+    
+}
+
+#save {
+    background: rgb(101, 199, 178);
+    border: none;
+    padding: 3px;
+    width: 16px;
+    
+}
