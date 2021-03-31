@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight and Balance</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <a href="aircraft-data.html">Edit Aircraft</a>
+            <a href="pilot-passenger-data.html">Edit Pilots/Passengers</a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="dropdown">
+            <span>Select Aircraft:</span>
+            <div class="dropdown-content"></div>
+        </div>
+        <div>
+            <table id="cgTable">
+                <tr>
+                    <th></th>
+                    <th>Weight</th>
+                    <th>Arm</th>
+                    <th>Moment</th>
+                </tr>
+                <tr>
+                    <th class="rowHead">Aircraft</th>
+                    <td><input type="text" id="aircraftWeight"></td>
+                    <td id="aircraftArm"></td>
+                    <td id="aircraftMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Pilot and front Pass</th>
+                    <td><input type="text" id="pilotAndFrontPassWeight"></td>
+                    <td id="pilotAndFrontPassArm"></td>
+                    <td id="pilotAndFrontPassMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Rear Passengers</th>
+                    <td><input type="text" id="rearPassWeight"></td>
+                    <td id="rearPassArm"></td>
+                    <td id="rearPassMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Aft bag 1</th>
+                    <td><input type="text" id="aftBagOneWeight"></td>
+                    <td id="aftBagOneArm"></td>
+                    <td id="aftBagOneMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Aft bag 2</th>
+                    <td><input type="text" id="aftBagTwoWeight"></td>
+                    <td id="aftBagTwoArm"></td>
+                    <td id="aftBagTwoMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Fuel (6 lbs per Gal)</th>
+                    <td><input type="text" id="fuelWeight"></td>
+                    <td id="fuelArm"></td>
+                    <td id="fuelMoment"></td>
+                </tr>
+                <tr>
+                    <th class="rowHead">Total</th>
+                    <td id="totalWeight"></td>
+                    <td id="totalArm"></td>
+                    <td id="totalMoment"></td>
+                </tr>
+            </table>
+            <input id="calculate" type="button" value="Calculate" >
+        </div>
+    </main>
+    
+    <footer></footer>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>
