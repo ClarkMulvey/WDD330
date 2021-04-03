@@ -20,6 +20,10 @@ const links =  [
     {
         label: "Week 5/6",
         url: "week5/index.html"
+    },
+    {
+        label: "Block 2 Challenge - Weight and Balance",
+        url: "weightAndBalance/index.html"
     }
 ]
 

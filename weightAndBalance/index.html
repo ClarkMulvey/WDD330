@@ -13,14 +13,15 @@
 
     <header>
         <div>
-            <a href="aircraft-data.html">Edit Aircraft</a>
-            <a href="pilot-passenger-data.html">Edit Pilots/Passengers</a>
+            <a href="../index.html" id="backLink">Back</a>
         </div>
     </header>
-    
+
     <main>
         <div class="dropdown">
             <span>Select Aircraft:</span>
+            <div id="displayedAircraft">None</div>
+            <a href="aircraft-data.html">Edit Aircraft</a>
             <div class="dropdown-content"></div>
         </div>
         <div>
@@ -33,38 +34,38 @@
                 </tr>
                 <tr>
                     <th class="rowHead">Aircraft</th>
-                    <td><input type="text" id="aircraftWeight"></td>
-                    <td id="aircraftArm"></td>
+                    <td><input type="number" id="aircraftWeight"></td>
+                    <td><input type="number" id="aircraftArm"></td>
                     <td id="aircraftMoment"></td>
                 </tr>
                 <tr>
                     <th class="rowHead">Pilot and front Pass</th>
-                    <td><input type="text" id="pilotAndFrontPassWeight"></td>
-                    <td id="pilotAndFrontPassArm"></td>
+                    <td><input type="number" id="pilotAndFrontPassWeight"></td>
+                    <td><input type="number" id="pilotAndFrontPassArm"></td>
                     <td id="pilotAndFrontPassMoment"></td>
                 </tr>
                 <tr>
                     <th class="rowHead">Rear Passengers</th>
-                    <td><input type="text" id="rearPassWeight"></td>
-                    <td id="rearPassArm"></td>
+                    <td><input type="number" id="rearPassWeight"></td>
+                    <td><input type="number" id="rearPassArm"></td>
                     <td id="rearPassMoment"></td>
                 </tr>
                 <tr>
                     <th class="rowHead">Aft bag 1</th>
-                    <td><input type="text" id="aftBagOneWeight"></td>
-                    <td id="aftBagOneArm"></td>
+                    <td><input type="number" id="aftBagOneWeight"></td>
+                    <td><input type="number" id="aftBagOneArm"></td>
                     <td id="aftBagOneMoment"></td>
                 </tr>
                 <tr>
                     <th class="rowHead">Aft bag 2</th>
-                    <td><input type="text" id="aftBagTwoWeight"></td>
-                    <td id="aftBagTwoArm"></td>
+                    <td><input type="number" id="aftBagTwoWeight"></td>
+                    <td><input type="number" id="aftBagTwoArm"></td>
                     <td id="aftBagTwoMoment"></td>
                 </tr>
                 <tr>
                     <th class="rowHead">Fuel (6 lbs per Gal)</th>
-                    <td><input type="text" id="fuelWeight"></td>
-                    <td id="fuelArm"></td>
+                    <td><input type="number" id="fuelWeight"></td>
+                    <td><input type="number" id="fuelArm"></td>
                     <td id="fuelMoment"></td>
                 </tr>
                 <tr>
@@ -74,11 +75,24 @@
                     <td id="totalMoment"></td>
                 </tr>
             </table>
-            <input id="calculate" type="button" value="Calculate" >
+            <div id="formButtons">
+                <input id="calculate" type="button" value="Calculate">
+                <input id="clearWeight" type="button" value="Clear User Entered Weight">
+            </div>
         </div>
     </main>
-    
+
     <footer></footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+    <!-- <script src="scripts/editAircraft.js" type="module"></script> -->
 
     <script src="scripts/main.js" type="module"></script>
 </body>

@@ -1,10 +1,69 @@
-input[type="text"] {
+
+* {
+  font-family: sans-serif;
+}
+
+header {
+  padding: 8px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+input[type="number"] {
   max-width:60px;
+}
+
+input[type="text"] {
+  max-width:120px;
+}
+
+h2{
+  margin: 8px;
+}
+
+h4 {
+  margin: auto;
+  padding-bottom: 8px;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
+}
+
+#formButtons {
+  display: flex;
+  justify-content:space-around;
+  padding: 8px
+}
+
+#displayedAircraft {
+  padding: 0 32px 0 32px;
+}
+
+#backLink {
+  margin: 8px;
+}
+
+#cgLimitsDiv {
+  border-style: solid;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  margin: 8px;
+  padding: 8px;
+}
+
+#weightSectionDiv {
+  border-style: solid;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  margin: 8px;
+  padding: 8px;
 }
 
 .dropdown-content {
@@ -23,6 +82,102 @@ input[type="text"] {
 
 .rowHead {
   text-align: left;
+}
+
+.planeList {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: auto;
+  padding: 10px;
+
+}
+
+.planeSection {
+  border-style: solid;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  margin: 8px;
+}
+
+.planeSection.editing {
+  border-style: solid;
+  
+}
+
+.planeList input[type="button"] {
+  background-color: #ffffff00;
+  border: none;
+  color: white;
+  padding: 0;
+  padding-right: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.editField {
+  margin: 6px 25px 6px 25px;
+  /* background-color:lightgreen; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  margin: 0 25px 0 25px;
+  color: rgb(247, 73, 54);
+}
+
+.editing {
+  width: auto;
+  border: 3px black;
+}
+
+.ArmExpander {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.CgLimitsExpander {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.editing input[type="number"] {
+  margin-right: 15px;
+}
+
+.editing input[type="text"] {
+  margin-right: 15px;
+}
+
+.editing input[value="Save"] {
+  background: rgb(228, 228, 228);
+  border: none;
+  width: 100%;
+  padding: 10px;
+}
+
+#formButtons input[type="button"] {
+  background-color: lightgray;
+  border-style: solid black;
+  border-radius: 5px;
+  padding: 8px;
+  padding-right: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 #cgTable,
