@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="styles/week7.css">
+</head>
+
+<body>
+    <header>
+        <div id="weeklyList">Weekly Pages</div>
+        <ol></ol>
+    </header>
+    <main>
+        <h2>Week 7 Notes/Code Examples</h2>
+
+        <h3>Links</h3>
+        <ol id="links">
+            <li>
+                <a href="TeamActivity/index.html">Team Activity</a>
+            </li>
+        </ol>
+
+        <h3>Chapter 11</h3>
+
+        <h4>Function Properties and Methods</h4>
+        <p>Functions are first-class objects – the can be passed around like all other values</p>
+        <p>Functions have properties and Methods themselves</p>
+        <p>Ex function.length will return the number of parameters it has</p>
+
+        <h4>Call and Apply Methods</h4>
+        <p>Call() method sets this inside a function – the first argument passed</p>
+        <p>Ex. sayHello.call(clark);</p>
+        <p>Call() method takes the first parameter, whereas the actual function accepts the parameters after the first
+        </p>
+
+        <h4>Custom Properties</h4>
+        <p>Can add properties to functions like any other object</p>
+        <p>Ex. Square.description = “” Can set a description attribute to a function called Square</p>
+
+        <h4>Memoization</h4>
+        <p>Can save results in a cache property</p>
+
+        <h4>IIFE</h4>
+        <p>Can create Temporary Variables</p>
+        <p>Can run Initialization code</p>
+        <p>Can use strict mode safely</p>
+
+
+
+        <h4>Function’s that redefine themselves</h4>
+        <p>A function can redefine itself by calling it’s name and then assigning it a new function</p>
+
+
+        <h4>Recursive Functions</h4>
+        <p>Call a function within itself with some kind of flag to return if met</p>
+
+
+        <h4>Functions can return functions</h4>
+        <p>Use these when a parameter can change the function</p>
+
+
+        <h4>Generator</h4>
+        <p>Returns a generator object – essentially an easy way to create objects that use other complex entities to be a part of their attributes</p>
+
+        <h3>Chapter 13 - Ajax</h3>
+        <h4>Redirect</h4>
+        <p>Redirect() method can be used to redirect to another URL – creates a new promise that resolves to the response from the redirected URL</p>
+
+        <h4>Blob</h4>
+        <p>The blob() method is used to read a file of raw data, such as an image or a spreadsheet</p>
+
+
+        <h4>Headers Interface</h4>
+        <p>Fetch API introduced a Headers interface, which can be used to create a Headers object.</p>
+        <p>An extremely important miscellaneous piece of information is that AJAX calls are async – so make sure to handle code and promises accordingly</p>
+
+
+
+    </main>
+    <footer></footer>
+
+    <script src="../scripts/weeks.js"></script>
+</body>
+
+</html>

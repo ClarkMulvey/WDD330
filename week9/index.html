@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9</title>
+    <link rel="stylesheet" href="styles/week9.css">
+</head>
+<body>
+    <header>
+        <div id="weeklyList">Weekly Pages</div>
+        <ol></ol>
+    </header>
+
+    <main>
+        <h2>Week 9 Notes</h2>
+
+        <h3>Links</h3>
+        <ol id="links">
+            <li>
+                <a href="teamActivity/index-START.html">Team Activity</a>
+            </li>
+        </ol>
+
+        <h3>Ch 9 – The Window Object</h3>
+        <h4>The Browser Object Model</h4>
+        <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen</p>
+        <p>This seems pretty similar to the DOM – the Document Object Model, the Browser is the whole browser, not just the document displayed on the browser</p>
+        <h4>Dialogs</h4>
+        <p>Alert()</p>
+        <p>Confirm()</p>
+        <p>Prompt()</p>
+        <p>All of these are methods you can call on the window, but be warned – these are frowned upon because they stop the program in it’s tracks </p>
+
+        <h4>Browser Information</h4>
+        <p>The window object has a navigator property that returns a reference to the Navigator object. The Navigator object contains information about the browser being used. Its userAgent property will return information about the browser and operating system being used. For example, if I run the following line of code, it shows that I am using Safari version 10 on Mac OS:</p>
+        <p>The window.location property is an object that contains information about the URL of the current page. It contains a number of properties that provide information about different fragments of the URL.</p>
+        <p>The window.history property can be used to access information about any previously visited pages in the current browser session.</p>
+
+        <h4>Controlling Windows</h4>
+        <p>A new window can be opened using the window.open() method. This takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter. This can also be assigned to a variable, so the window can then be referenced later in the code:</p>
+        <p>const popup = window.open('https://sitepoint.com','</p>
+        <p>SitePoint','width=400,height=400,resizable=yes');</p>
+        <p>Keep in mind – popups are a real bad idea, people hate popups\</p>
+
+        <h4>Screen information</h4>
+        <p>The window.screen object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the height and width properties respectively:</p>
+
+        <h4>The Document Object – DOM</h4>
+        <p>Document.write() – writes a string of text to the page</p>
+
+        <h4>Timing Functions</h4>
+        <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals.</p>
+        <p>The window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter. </p>
+
+        <h3>Chapter 14 – HTML5 APIs</h3>
+        <h4>The data- Attribute</h4>
+        <p>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose is to be used by a JavaScript program. This means they’re perfect for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page.</p>
+
+        <h4>Storage</h4>
+        <p>Local storage can be accessed with HTML5 – which is what we’ve been using in our class up till now.</p>
+
+        <h4>Geolocation</h4>
+        <p>The Geolocation API is used to obtain the geographical position of the device. This means it can be used to find the user’s exact location, then link to nearby places or measure the speed at which the user is moving. This information can then be used to filter data based on the user's location or speed and direction of travel. An example of this might be a search function that returns results based on your location. Because of privacy concerns, permission to use this has to be granted by the user first.</p>
+        <p>navigator.geolocation.getCurrentPosition(youAreHere);</p>
+        <p>You can get information based on this position like:</p>
+        <p>Position.speed</p>
+        <p>Position.altitude</p>
+        <p>Position.heading</p>
+        <p>Position.timestamp</p>
+
+        <h4>Notifications</h4>
+        <p>The Notification API allows you to show messages using the system's notifications. This is usually a popup in the corner of the screen, but it changes depending on the operating system. An advantage of using the system notification is that they will still be displayed even if the web page that calls them isn't the current tab.</p>
+
+
+    </main>
+    <script src="../scripts/weeks.js"></script>
+
+</body>
+</html>

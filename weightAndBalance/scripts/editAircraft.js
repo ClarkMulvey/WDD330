@@ -17,8 +17,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-let planeList = [] /*new Airplane(1687.8, 40.23, "74Y"), new Airplane(1700.8, 42.23, "AC8"), new Airplane(1905.8, 39.23, "88V")];*/
-
+let planeList = []
 
 function writeData() {
     firebase.database().ref("plane0").set({
@@ -29,15 +28,6 @@ function writeData() {
 }
 
 function getPlaneListFromLocalStorage() {
-    /*if (localStorage.getItem('planeList')) {
-        let tempPlaneList = JSON.parse(localStorage.getItem('planeList'));
-        console.log(tempPlaneList);
-
-        tempPlaneList.forEach(plane => {
-            plane.__proto__ = Airplane.prototype;
-            planeList.push(plane);
-        })
-    }*/
     firebase.database().ref('planeList').once('value', function(snapshot) {
         let tempPlaneList = snapshot.val();
         tempPlaneList.forEach(plane => {
@@ -49,7 +39,6 @@ function getPlaneListFromLocalStorage() {
 }
 
 function savePlaneListToLocalStorage(planeList) {
-    // localStorage.setItem('planeList', JSON.stringify(planeList));
     firebase.database().ref('planeList').set(planeList);
 }
 
@@ -57,7 +46,6 @@ function createEditDiv(parentElement, planeList, divName, label, position, input
     // create Div
     let Div = document.createElement('div');
     Div.id = `${divName}Div`;
-    // Div.classList.add("editField");
 
     let innerDiv = document.createElement('div');
     innerDiv.classList.add("editField");

@@ -17,7 +17,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-let planeList = [] /*new Airplane(1687.8, 40.23, "74Y"), new Airplane(1700.8, 42.23, "AC8"), new Airplane(1701.8, 42.23, "AC8"), new Airplane(1905.8, 39.23, "88V")];*/
+let planeList = [] 
 let currentPlane;
 
 // Get page Elements
@@ -215,10 +215,6 @@ function displayTotals() {
         actualCgLimitDiv.innerHTML += parseFloat(totalArm.textContent).toFixed(2);
         isWithinCgLimitsDiv.innerHTML += ((totalArm.textContent > currentPlane.CgLimits.forward && totalArm.textContent < currentPlane.CgLimits.aft) ? "Yes" : "No, aircraft unstable");
 
-        console.log(currentPlane.CgLimits.forward);
-        console.log(currentPlane.CgLimits.aft);
-        console.log(totalArm.textContent > currentPlane.CgLimits.forward);
-        console.log(totalArm.textContent < currentPlane.CgLimits.aft);
     }
 
 }
@@ -282,7 +278,6 @@ function displayDropDown(planeList) {
 }
 
 function setAircraftData(plane) {
-    console.log(plane);
     aircraftWeight.value = plane.AircraftWeight;
     setValuesFromSelectedAircraft(plane);
 }
@@ -290,14 +285,6 @@ function setAircraftData(plane) {
 //####################################################################
 
 function getPlaneListFromLocalStorage() {
-    /*if (localStorage.getItem('planeList')) {
-        let tempPlaneList = JSON.parse(localStorage.getItem('planeList'));
-
-        tempPlaneList.forEach(plane => {
-            plane.__proto__ = Airplane.prototype;
-            planeList.push(plane);
-        })
-    }*/
 
     firebase.database().ref('planeList').once('value', function (snapshot) {
         let tempPlaneList = snapshot.val();
@@ -311,7 +298,6 @@ function getPlaneListFromLocalStorage() {
 
 
 getPlaneListFromLocalStorage();
-//displayDropDown(planeList, currentPlane);
 
 calculateButton.addEventListener('click', calculate);
 clearWeightButton.addEventListener('click', clearUserInputWeight);

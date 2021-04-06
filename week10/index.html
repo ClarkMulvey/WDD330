@@ -1,16 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/week10.css">
+    
+    <title>Week 10</title>
 </head>
+
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <div id="weeklyList">Weekly Pages</div>
+        <ol></ol>
+    </header>
+    <main>
+        <h2>Week 10 Notes</h2>
+
+        <h3>Links</h3>
+        <ol id="links">
+            <li>
+                <a href="TeamActivity/index.html">Team Activity</a>
+            </li>
+        </ol>
+
+        <h3>Client-side form validation</h3>
+        <h4>What is form validation?</h4>
+        <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements set forth in the various form controls.</p>
+        <p>It should also be noted that there should be server-side validation too. This redundancy is important to catch anything that may fall through the cracks by various reasons, including client-side developer oversight.</p>
+
+        <h4>Examples of form validation from the reading:</h4>
+        <p>"This field is required" (You can't leave this field blank).</p>
+        <p>"Please enter your phone number in the format xxx-xxxx" (A specific data format is required for it to be considered valid).</p>
+        <p>"Please enter a valid email address" (the data you entered is not in the right format).</p>
+        <p>"Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one symbol, and a number." (A very specific data format is required for your data).</p>
+
+        <h4>Types of validation</h4>
+        <p>Built-in form validation – like when an input of type number is specified – only numbers may be entered into that field. You can also use the required attribute, or when using the number attribute the min and max attributes</p>
+        <p>JavaScript validation coded using JS – super customizable but needs to be created by the developer</p>
+
+        <h4>Validating forms using JavaScript</h4>
+        <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+        <p>HTMLButtonElement (represents a button element)</p>
+        <p>HTMLFieldSetElement (represents a fieldset element)</p>
+        <p>HTMLInputElement (represents an input element)</p>
+        <p>HTMLOutputElement (represents an output element)</p>
+        <p>HTMLSelectElement (represents a select element)</p>
+        <p>HTMLTextAreaElement (represents a textarea element)</p>
+        <p>HTML:</p>
+        <form novalidate>
+            <p>
+                <label for="mail">
+                    <span>Please enter an email address:</span>
+                    <input type="email" id="mail" name="mail" required minlength="8">
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </p>
+            <button>Submit</button>
+        </form>
+        <p>JavaScript:</p>
+        <p>// There are many ways to pick a DOM node; here we get the form itself and the email</p>
+        <p>// input box, as well as the span element into which we will place the error message.</p>
+        <p>const form  = document.getElementsByTagName('form')[0];</p>
+        <p>const email = document.getElementById('mail');</p>
+        <p>const emailError = document.querySelector('#mail + span.error');</p>
+        <p>email.addEventListener('input', function (event) {</p>
+        <p>  // Each time the user types something, we check if the</p>
+        <p>  // form fields are valid.</p>
+        <p></p>
+        <p>  if (email.validity.valid) {</p>
+        <p>    // In case there is an error message visible, if the field</p>
+        <p>    // is valid, we remove the error message.</p>
+        <p>    emailError.textContent = ''; // Reset the content of the message</p>
+        <p>    emailError.className = 'error'; // Reset the visual state of the message</p>
+        <p>  } else {</p>
+        <p>    // If there is still an error, show the correct error</p>
+        <p>    showError();</p>
+        <p>  }</p>
+        <p>});</p>
+        <p></p>
+        <p>form.addEventListener('submit', function (event) {</p>
+        <p>  // if the email field is valid, we let the form submit</p>
+        <p></p>
+        <p>  if(!email.validity.valid) {</p>
+        <p>    // If it isn't, we display an appropriate error message</p>
+        <p>    showError();</p>
+        <p>    // Then we prevent the form from being sent by canceling the event</p>
+        <p>    event.preventDefault();</p>
+        <p>  }</p>
+        <p>});</p>
+        <p></p>
+        <p>function showError() {</p>
+        <p>  if(email.validity.valueMissing) {</p>
+        <p>    // If the field is empty</p>
+        <p>    // display the following error message.</p>
+        <p>    emailError.textContent = 'You need to enter an e-mail address.';</p>
+        <p>  } else if(email.validity.typeMismatch) {</p>
+        <p>    // If the field doesn't contain an email address</p>
+        <p>    // display the following error message.</p>
+        <p>    emailError.textContent = 'Entered value needs to be an e-mail address.';</p>
+        <p>  } else if(email.validity.tooShort) {</p>
+        <p>    // If the data is too short</p>
+        <p>    // display the following error message.</p>
+        <p>    emailError.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;</p>
+        <p>  }</p>
+        <p></p>
+        <p>  // Set the styling appropriately</p>
+        <p>  emailError.className = 'error active';</p>
+        <p>}</p>
+
+    </main>
     <footer></footer>
 
-    <script src="/styles/week10.js"></script>
+    <script src="/scripts/week10.js"></script>
+    <script src="../scripts/weeks.js"></script>
 </body>
+
 </html>

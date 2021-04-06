@@ -1,5 +1,6 @@
 export class Hike {
-    constructor(name, distance, difficulty, description, directions, imgSrc="falls.jpg", imgAlt="Image of Bechler Falls") {
+    constructor(id, name, distance, difficulty, description, directions, imgSrc="falls.jpg", imgAlt="Image of Bechler Falls") {
+        this.id = id;
         this.name = name;
         this.distance = distance;
         this.difficulty = difficulty;

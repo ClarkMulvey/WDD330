@@ -3,15 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/week5.css">
+    <title>Week 8</title>
+    <link rel="stylesheet" href="styles/week8.css">
 </head>
 <body>
     <header>
+        <div id="weeklyList">Weekly Pages</div>
         <ol></ol>
     </header>
 
-    <main></main>
+    <main>
+
+
+        <h2>Week 8 Notes</h2>
+
+        <h3>Links</h3>
+        <ol id="links">
+            <li>
+                <a href="TeamActivity/index.html">Team Activity</a>
+            </li>
+        </ol>
+
+        <h3>Ch 8 – CSS3 Transforms and Transitions</h3>
+        <h4>Transforms</h4>
+        <p>Transform property lets you translate, rotate, scale, and/or skew any element on the page.</p>
+        <p>Sometimes transforms on older browsers don’t work.</p>
+        <p>The order of transform functions does matter: if you rotate before translating, your translate direction will be on the rotated axis.</p>
+        <h4>The transition-duration Property</h4>
+        <p>The transition-duration property sets how long the transition will take: the duration of time it takes to go from the default state to the transitioned state. You can specify this either in seconds ( s ) or milliseconds ( ms ).</p>
+        <h4>Animations</h4>
+        <p>Transitions animate elements over time; however, they’re limited in what they can do. You can define starting and ending states, but there’s no fine-grained control over any intermediate states.CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.</p>
+        <p>To animate an element in CSS, you first create a named animation, then attach it to an element in that element’s property declaration block.</p>
+
+        <h3>Ch12 – Canvas, SVG, and Drag and Drop</h3>
+        <h4>Canvas</h4>
+        <p>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. This can improve the performance of our websites by avoiding the need to download images off the network.</p>
+        <p>You can actually draw on the Canvas first by getting the context, filling our brush, and then making the code correct so that a user can draw on the canvas.</p>
+        <p>Ex:</p>
+        <p>var canvas = document.getElementById("myCanvas"); </p>
+        <p>var context = canvas.getContext("2d"); </p>
+        <p>context.strokeStyle = "red";</p>
+        <p>context.fillStyle = "rgba(0, 0, 255, 0.5)";</p>
+        <p>context.fillRect(10, 10, 100, 100);   </p>
+        <p>context.strokeRect(10, 10, 100, 100);</p>
+        <h4>Canvas Coordinate System</h4>
+        <p>Canvas coordinates start in the top left, and go “positive” to the right and down</p>
+        <h4>Drawing Other Shapes by Creating Paths</h4>
+        <p>We can draw other shapes than just rectangles – we have to use Paths, which create a blueprint for our lines, arcs, and shapes.</p>
+        <p>function drawCircle(can</p>
+        <p>vas) {</p>
+        <p>    var context = canvas.getContext("2d");</p>
+        <p>    context.beginPath();</p>
+        <p>}</p>
+        <h4>Manipulating Images</h4>
+        <p>Once we’ve drawn an image on the canvas , we can use the getImageData method from the Canvas API to manipulate the pixels of that image.</p>
+        <h4>SVG</h4>
+        <p>First, a quick refresher: SVG stands forScalable Vector Graphics, a specific file format that allows you to describe vector graphics using XML. A major selling point of vector graphics in general is that, unlike bitmap images (such as GIF, JPEG, PNG, and TIFF), vector images preserve their quality even as you blow them up or shrink them down.</p>
+        <p>Drawing a circle inSVG:</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+            <circle cx="50" cy="50" r="25" fill="red"/>
+        </svg>        
+        <h4>Drag and Drop</h4>
+        <p>There are several steps to adding drag and drop to your page:</p>
+        <p>Set the draggable attribute on any HTML elements you’d like to be draggable.</p>
+        <p>Add an event listener for the dragstart event on any draggable HTML elements.</p>
+        <p>Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.</p>
+        <p>Important note that the draggable attribute is NOT a boolean</p>
+
+        <h2>API Call practice with Bro Thayne:</h2>
+
+    </main>
     <script src="../scripts/weeks.js"></script>
     <script src="scripts/week8.js"></script>
 </body>
